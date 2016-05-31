@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <group android:id="@+id/grp_main"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_my_asset"
+            android:icon="@drawable/icon_list_accepted"
+            android:title="My Assets" />
+
+        <item
+            android:id="@+id/nav_item_transactions"
+            android:icon="@drawable/icon_list_add"
+            android:title="For Acceptance" />
+
+        <item
+            android:id="@+id/nav_item_asset_transfer"
+            android:icon="@drawable/icon_transfer"
+            android:title="Asset Transfer" />
+    </group>
+    <group android:id="@+id/grp_mis"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_items_mis_assets"
+            android:icon="@drawable/icon_list_accepted"
+            android:title="MIS Assignments"/>
+        <item
+            android:id="@+id/nav_items_mis_acceptances"
+            android:icon="@drawable/icon_list_add"
+            android:title="MIS For Acceptance"/>
+    </group>
+    <group android:id="@+id/grp_admin"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_items_admin_register_asset"
+            android:icon="@drawable/icon_new_asset"
+            android:title="New Asset"/>
+
+        <item
+            android:id="@+id/nav_items_admin_assign"
+            android:icon="@drawable/icon_new_assignment"
+            android:title="New Assignment"/>
+
+        <item
+            android:id="@+id/nav_items_admin_asset_verification"
+            android:icon="@drawable/icon_list_accepted"
+            android:title="Asset Verification"/>
+        <item
+            android:id="@+id/nav_items_admin_acceptances"
+            android:icon="@drawable/icon_list_add"
+            android:title="Accept Releases"/>
+    </group>
+    <group android:id="@+id/grp_manager"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_items_mgr_approvals"
+            android:icon="@drawable/icon_approvals"
+            android:title="Approvals"/>
+        <item
+            android:id="@+id/nav_items_mgr_transfer"
+            android:icon="@drawable/icon_list_add"
+            android:title="Manager Transfer"/>
+        <item
+            android:id="@+id/nav_items_mgr_release"
+            android:icon="@drawable/icon_list_add"
+            android:title="Manager Release"/>
+    </group>
+
+    <group android:id="@+id/grp_end"
+            android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_items_change_password"
+            android:icon="@drawable/icon_pwd_change"
+            android:title="Change Password"/>
+        <item
+            android:id="@+id/nav_items_settings"
+            android:icon="@drawable/icon_settings"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/nav_items_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="Logout"/>
+
+    </group>
+</menu>

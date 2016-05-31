@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.weserv.grumpy.assetracker.UI.Preference">
+
+    <!-- The ActionBar displayed at the top -->
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_asset_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_preference_fastws"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_fastws_address"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:foregroundGravity="center"
+                />
+
+            <TextView
+                android:id="@+id/label_preferences_fastws"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FASTWS Address"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:layout_toRightOf="@id/img_preference_fastws"
+                android:layout_marginLeft="10dp"
+                />
+
+            <EditText
+                android:id="@+id/text_preferences_fastws"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="...."
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:layout_below="@id/label_preferences_fastws"
+                android:layout_toRightOf="@id/img_preference_fastws"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Button
+                android:id="@+id/button_preferences_edit_fastws"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:drawableLeft="@drawable/icon_save"/>
+
+        </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_preferences_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Close"
+                style="@style/CustomRaisedButton"
+                />
+
+
+        </RelativeLayout>
+
+
+</LinearLayout>

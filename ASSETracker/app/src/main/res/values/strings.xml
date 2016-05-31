@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Fastrack</string>
+    <string name="app_version">v0.8.0.5</string>
+    <!-- from franz-->
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_login">LOGIN</string>
+    <string name="txt_register">Register Here</string>
+    <string name="txt_ok">OK</string>
+
+    <string name="txt_empID">Employee ID</string>
+    <string name="txt_NewPassword">Employee ID</string>
+    <string name="txt_ConfirmNewPassword">Confirm New Password</string>
+    <string name="txt_done">Cancel</string>
+    <string name="invalid_Login_Title">Failed log in</string>
+    <string name="invalid_Login_text">Incorrect username or password</string>
+    <string name="register_title">Register</string>
+    <string name="login_title">Login</string>
+    <string name="name">Employee ID</string>
+    <string name="email">Email</string>
+    <string name="pwd">Password</string>
+    <string name="btnRegister">Register</string>
+    <string name="txtForgotPassword">Forgot Password</string>
+    <string name="btnResetPassword">Reset Password</string>
+
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_password_reset">Reset Password</string>
+    <string name="title_activity_setting">Settings</string>
+    <!-- mine -->
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_host_address">Host Address</string>
+    <string name="title_activity_my_asset">MyAssetActivity</string>
+    <string name="title_activity_activity_with_drawer_pane">ActivityWithDrawerPane</string>
+    <string name="title_activity_activity_with_appbar">ActivityWithAppbar</string>
+    <string name="title_activity_main_screen">MainScreenActivity</string>
+
+    <string name="title_myasset">My Assets</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="alert_dialog_save">Save</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+
+    <string name="txt_preferences">Preferences</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_cancel">Cancel</string>
+
+    <!--Marvin-->
+    <string name="inst_preferences_hostaddress">Enter the IP Address of the FASTWS server below.</string>
+    <string name="scan_tag">Scan It!</string>
+    <string name="save_it">Save It!</string>
+    <string name="accept">Accept</string>
+    <string name="spinner_select">Please select an item</string>
+
+    <string name="inst_forgot_password">Enter your Employee ID below. We will reset your password and the new password will be sent on your email. </string>
+    <string name="inst_register">Enter your Employee ID below. Your initial password will be sent to your registered email address.</string>
+    <string name="inst_assign_asset_enterEmployee">Search for Employee</string>
+    <string name="inst_assign_asset_enterAsset">Search for Asset</string>
+    <string name="search_now">Search</string>
+    <string name="assign_asset">Assign Asset</string>
+    <string name="label_recipient_data">Recipient Employee Data</string>
+    <string name="label_new_asset">Register New Asset</string>
+    <string name="error_empty_search_key">Search key is empty.</string>
+    <string name="error_not_found">Data not found!</string>
+    <string name="error_request_aborted">Missing required fields. Request aborted!</string>
+    <string name="inst_get_asset_tag">Note : Use the scan button on the lower right side of the screen to initiate barcode scanning. Otherwise, manually key-in the Asset Tag and press Accept.</string>
+    <string name="hint_asset_tag">Asset Tag</string>
+    <string name="not_available">Function Not Available</string>
+
+    <string name="button_label_transfer">Transfer Asset</string>
+    <string name="button_label_release">Release Asset</string>
+    <string name="button_label_release_to_emp">Release Asset to Employee</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_change_password">Change Password</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_old_password">Enter old password</string>
+    <string name="hint_new_password">Enter new password</string>
+    <string name="hint_confirm_password">Confirm new password</string>
+    <string name="btn_submit">Submit</string>
+    <string name="title_activity_asset_registration">Asset Registration</string>
+    <string name="under_construction">Under Construction</string>
+    <string name="title_activity_transfer_asset">Asset Transfer</string>
+    <string name="title_activity_asset_assignment">Asset Assignment</string>
+    <string name="title_activity_get_asset_tag">Acquire Asset Tag</string>
+    <string name="title_activity_manage_asset">Manage Assignment</string>
+
+</resources>
