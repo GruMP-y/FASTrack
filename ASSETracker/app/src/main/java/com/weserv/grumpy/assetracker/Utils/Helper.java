@@ -3,6 +3,7 @@ package com.weserv.grumpy.assetracker.Utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 
@@ -22,9 +23,16 @@ public class Helper {
     }
 
     public static void ShowAlertDialog(Context aContext, String aMessage){
-        AlertDialog.Builder builder = new AlertDialog.Builder(aContext);
-        builder.setMessage(aMessage);
-        builder.create().show();
-    }
+        AlertDialog dialog = new AlertDialog.Builder(aContext).create();
+        dialog.setCancelable(false);
+        dialog.setTitle("Fastrack");
+        dialog.setMessage(aMessage);
+
+        dialog.setButton("OK",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                arg0.dismiss();
+            }
+        });
 
 }
