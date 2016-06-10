@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.weserv.grumpy.assetracker.UI.ManageAssetActivity">
+
+    <!-- The ActionBar displayed at the top -->
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_manage_asset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/button_left_right_padding"
+        android:paddingRight="@dimen/button_left_right_padding"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:text="Assignment Detail"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:background="@color/primary_light"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Assignment ID" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_assign_id"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Employee ID" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_emp_id"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Asset Type" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_asset_type"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Brand and Model" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_brand_model"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Serial Number" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_serialno"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:text="Asset Tag" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_manage_assign_asset_tag"
+                android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                android:layout_marginRight="@dimen/text_view_instruction_margin"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/button_manage_assign_transfer"
+        android:layout_width="match_parent"
+        style="@style/CustomRaisedButton"
+        android:layout_margin="@dimen/button_margin"
+        android:text="Release to Employee"
+        />
+
+    <Button
+        android:id="@+id/button_manage_assign_release"
+        android:layout_width="match_parent"
+        style="@style/CustomRaisedButton"
+        android:layout_margin="@dimen/button_margin"
+        android:text="Release To Custodian"
+        />
+</LinearLayout>

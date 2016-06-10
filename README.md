@@ -1,2 +1,2 @@
-# FASTrack
+# Fastrack
 This is FASTracks Mobile UI.
