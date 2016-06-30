@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.weserv.grumpy.assetracker.UI.TransferAssetActivity">
+    tools:context="com.weserv.grumpy.assetracker.View.TransferAssetActivity">
 
     <!-- The ActionBar displayed at the top -->
     <include
@@ -13,18 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_asset_tag_search"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardElevation="2dp"
-        card_view:cardMaxElevation="2dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/button_left_right_padding"
-        android:paddingRight="@dimen/button_left_right_padding"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_asset_tag_search"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="2dp"
+                card_view:cardMaxElevation="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                >
+
+                <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -35,7 +46,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:textSize="@dimen/abc_text_size_medium_material"
-                android:text="Asset For Transfer"
+                android:text="Asset To Move"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:background="@color/primary_light"/>
@@ -112,21 +123,106 @@
                 />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_recipient"
+                android:layout_width="match_parent"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="2dp"
+                card_view:cardMaxElevation="2dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Recipient Employee"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_recipient"
-        android:layout_width="match_parent"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardElevation="2dp"
-        card_view:cardMaxElevation="2dp"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/button_left_right_padding"
-        android:paddingRight="@dimen/button_left_right_padding">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-        <LinearLayout
+                        <Button
+                            android:id="@+id/button_transfer_frm_search_emp"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@android:drawable/ic_menu_search"
+                            />
+
+                        <EditText
+                            android:id="@+id/text_recipient_id"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                            android:layout_marginRight="@dimen/text_view_instruction_margin"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@id/button_transfer_frm_search_emp"
+                            android:singleLine="true"
+                            android:hint="Search Employee ID"
+                            />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Employee Name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/label_transfer_frm_emp_name"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Position" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/label_trasnfer_frm_emp_dept"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+        </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_transfer_reason"
+                android:layout_width="match_parent"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="2dp"
+                card_view:cardMaxElevation="2dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -136,80 +232,34 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:textSize="@dimen/abc_text_size_medium_material"
-                android:text="Recipient Employee"
+                android:text="Reason for Movement"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:background="@color/primary_light"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/button_transfer_frm_search_emp"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:drawableLeft="@android:drawable/ic_menu_search"
-                    />
-
-                <EditText
-                    android:id="@+id/text_recipient_id"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="@dimen/text_view_instruction_margin"
-                    android:layout_marginRight="@dimen/text_view_instruction_margin"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@id/button_transfer_frm_search_emp"
-                    android:singleLine="true"
-                    android:hint="Search Employee ID"
-                    />
-            </RelativeLayout>
-
-            <TextView
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_gray"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:text="Employee Name" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/label_transfer_frm_emp_name"
-                android:layout_marginLeft="@dimen/text_view_instruction_margin"
-                android:layout_marginRight="@dimen/text_view_instruction_margin"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:id="@+id/spinner_transfer_reasons"
+                android:entries="@array/reason_codes"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/light_gray"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:text="Position" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/label_trasnfer_frm_emp_dept"
-                android:layout_marginLeft="@dimen/text_view_instruction_margin"
-                android:layout_marginRight="@dimen/text_view_instruction_margin"
-                android:textSize="@dimen/abc_text_size_medium_material"
-                />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-    <Button
-        android:id="@+id/button_transfer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:paddingLeft="@dimen/button_left_right_padding"
-        android:paddingRight="@dimen/button_left_right_padding"
-        style="@style/CustomRaisedButton"
-        android:layout_margin="@dimen/button_margin"
-        android:text="Transfer" />
+            <Button
+                android:id="@+id/button_transfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                style="@style/CustomRaisedButton"
+                android:layout_margin="@dimen/button_margin"
+                android:text="Transfer" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

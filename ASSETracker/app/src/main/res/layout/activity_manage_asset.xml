@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.weserv.grumpy.assetracker.UI.ManageAssetActivity">
+    tools:context="com.weserv.grumpy.assetracker.View.ManageAssetActivity">
 
     <!-- The ActionBar displayed at the top -->
     <include
@@ -144,6 +144,7 @@
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
     <Button
         android:id="@+id/button_manage_assign_transfer"
         android:layout_width="match_parent"

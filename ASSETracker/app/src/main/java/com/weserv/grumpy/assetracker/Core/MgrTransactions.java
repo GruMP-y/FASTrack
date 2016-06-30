@@ -5,10 +5,10 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
-import com.weserv.grumpy.assetracker.Core.Connection.APIJsonArrayRequestFactory;
-import com.weserv.grumpy.assetracker.Core.Connection.HttpVolleyRequestSender;
-import com.weserv.grumpy.assetracker.Core.Connection.MessageConstants;
-import com.weserv.grumpy.assetracker.UI.MyApp;
+import com.weserv.grumpy.assetracker.RESTHelper.APIJsonArrayRequestFactory;
+import com.weserv.grumpy.assetracker.RESTHelper.HttpVolleyRequestSender;
+import com.weserv.grumpy.assetracker.RESTHelper.MessageConstants;
+import com.weserv.grumpy.assetracker.View.MyApp;
 import com.weserv.grumpy.assetracker.Utils.Common;
 
 import org.json.JSONArray;
@@ -85,6 +85,22 @@ public class MgrTransactions extends Assets {
         Log.i(Common.LOGNAME,"MGRTransactions : Error -> "+error.getMessage());
         setChanged();
         notifyObservers(Common.ERROR);
+    }
+
+    public JSONObject getMGRTransAssetTag(String assetTag){
+        JSONObject asset;
+        try {
+
+            for (int i = 0; i < forAcceptance.length(); i++) {
+                asset = forAcceptance.getJSONObject(i);
+                if (asset.getString(Common.FLD_ASSET_TAG).equals(assetTag)){
+                    return asset;
+                }
+            }
+        }
+        catch (JSONException ex){
+        }
+        return null;
     }
 
 

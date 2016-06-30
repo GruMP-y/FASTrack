@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Fastrack</string>
-    <string name="app_version">v0.8.0.5</string>
+    <string name="app_version">v0.8.1.0</string>
     <!-- from franz-->
     <string name="txt_username">Username</string>
     <string name="txt_password">Password</string>
@@ -85,9 +85,19 @@
     <string name="btn_submit">Submit</string>
     <string name="title_activity_asset_registration">Asset Registration</string>
     <string name="under_construction">Under Construction</string>
-    <string name="title_activity_transfer_asset">Asset Transfer</string>
+    <string name="title_activity_transfer_asset">Move Asset</string>
     <string name="title_activity_asset_assignment">Asset Assignment</string>
     <string name="title_activity_get_asset_tag">Acquire Asset Tag</string>
     <string name="title_activity_manage_asset">Manage Assignment</string>
+    <string name="title_activity_approvals">Approvals</string>
+
+    <string-array name="reason_codes">
+        <item>For Reassignment</item>
+        <item>For Repair</item>
+        <item>Resignation</item>
+        <item>For Decommissioning</item>
+        <item>Asset Replacement</item>
+        <item>Others</item>
+    </string-array>
 
 </resources>

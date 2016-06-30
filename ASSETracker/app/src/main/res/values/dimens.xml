@@ -9,6 +9,7 @@
 
     <dimen name="text_view_instruction_margin">10dp</dimen>
     <dimen name="text_view_instruction_text_size">22dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

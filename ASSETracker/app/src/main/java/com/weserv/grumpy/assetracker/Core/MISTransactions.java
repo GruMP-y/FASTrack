@@ -5,10 +5,10 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
-import com.weserv.grumpy.assetracker.Core.Connection.APIJsonArrayRequestFactory;
-import com.weserv.grumpy.assetracker.Core.Connection.HttpVolleyRequestSender;
-import com.weserv.grumpy.assetracker.Core.Connection.MessageConstants;
-import com.weserv.grumpy.assetracker.UI.MyApp;
+import com.weserv.grumpy.assetracker.RESTHelper.APIJsonArrayRequestFactory;
+import com.weserv.grumpy.assetracker.RESTHelper.HttpVolleyRequestSender;
+import com.weserv.grumpy.assetracker.RESTHelper.MessageConstants;
+import com.weserv.grumpy.assetracker.View.MyApp;
 import com.weserv.grumpy.assetracker.Utils.Common;
 
 import org.json.JSONArray;
