@@ -64,6 +64,8 @@ public class AssetAdapter extends RecyclerView.Adapter<AssetAdapter.ViewHolder>{
         viewHolder.imageStatus.setText(brandModel.substring(0,1));
 
         viewHolder.imageStatus.setBackgroundColor(Helper.GetRandomColor(brandModel.substring(0,1)));
+
+
     }
 
     public interface OnItemClickListener{

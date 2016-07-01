@@ -2,22 +2,20 @@ package com.weserv.grumpy.assetracker.Core;
 
 import android.app.Activity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
-import com.weserv.grumpy.assetracker.Core.Connection.APIStringRequestFactory;
-import com.weserv.grumpy.assetracker.Core.Connection.HttpVolleyRequestSender;
-import com.weserv.grumpy.assetracker.Core.Connection.MessageConstants;
-import com.weserv.grumpy.assetracker.Core.Connection.RequestResponseCallback;
-import com.weserv.grumpy.assetracker.UI.MyApp;
+import com.weserv.grumpy.assetracker.RESTHelper.APIStringRequestFactory;
+import com.weserv.grumpy.assetracker.RESTHelper.HttpVolleyRequestSender;
+import com.weserv.grumpy.assetracker.RESTHelper.MessageConstants;
+import com.weserv.grumpy.assetracker.RESTHelper.RequestResponseCallback;
+import com.weserv.grumpy.assetracker.View.MyApp;
 import com.weserv.grumpy.assetracker.Utils.Common;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Observer;
 import java.util.Observable;
 /**
  * Created by Vans on 9/27/2015.
@@ -48,8 +46,7 @@ public class Asset extends Observable
     private int current_action;
 
 
-    public Asset()
-      {
+    public Asset() {
     }
 
     public Asset(JSONObject anAsset){
@@ -76,7 +73,6 @@ public class Asset extends Observable
         this.mAcquisitionDate = mAcquisitionDate;
         this.mBrand = brand;
     }
-
 
     public int getAssignmentID(){
         String value;
@@ -111,8 +107,7 @@ public class Asset extends Observable
         }
     }
 
-    public int getFixedAssetID()
-    {
+    public int getFixedAssetID() {
         String value;
         try {
 
@@ -132,6 +127,7 @@ public class Asset extends Observable
     }
 
     public void setFixedAssetID(int mFixedAssetID) {
+
         this.mFixedAssetID = mFixedAssetID;
     }
 
@@ -156,8 +152,7 @@ public class Asset extends Observable
         this.mModel = mModel;
     }
 
-    public String getBrand()
-    {
+    public String getBrand() {
         String value;
         try {
 
@@ -174,6 +169,7 @@ public class Asset extends Observable
     }
 
     public void setBrand(String brand) {
+
         this.mBrand = brand;
     }
 
@@ -194,6 +190,7 @@ public class Asset extends Observable
     }
 
     public void setSerialNumber(String mSerialNumber) {
+
         this.mSerialNumber = mSerialNumber;
     }
 
@@ -215,10 +212,12 @@ public class Asset extends Observable
     }
 
     public void setAssetTag(String mAssetTag) {
+
         this.mAssetTag = mAssetTag;
     }
 
     public int getAssetHardwareTypeID() {
+
         return mAssetHardwareTypeID;
     }
 
@@ -243,8 +242,7 @@ public class Asset extends Observable
 
     }
 
-    public String FromID()
-    {
+    public String FromID() {
         String value;
         try {
 
@@ -264,11 +262,11 @@ public class Asset extends Observable
     }
 
     public void setFromID(String aFromID) {
+
         this.mFromID = aFromID;
     }
 
-    public String ToID()
-    {
+    public String ToID() {
         String value;
         try {
 
@@ -288,6 +286,7 @@ public class Asset extends Observable
     }
 
     public void setToID(String aToID) {
+
         this.mToID = aToID;
     }
 
@@ -296,7 +295,22 @@ public class Asset extends Observable
     }
 
     public int getAssetHardwareStatusID() {
-        return mAssetHardwareStatusID;
+
+        String value;
+        try {
+
+            if ((assetDetail.has(Common.FLD_ASSET_STAT_ID))) {
+                value = assetDetail.getString(Common.FLD_ASSET_STAT_ID);
+            } else {
+                value = Integer.toString(mAssetHardwareStatusID);
+            }
+
+            return Integer.parseInt(value);
+
+
+        } catch (JSONException ex) {
+            return 0;
+        }
     }
 
     public void setAssetHardwareStatusID(int mAssetHardwareStatusID) {
@@ -304,6 +318,7 @@ public class Asset extends Observable
     }
 
     public String getAssetHardwareStatusDescription() {
+
         return mAssetHardwareStatusDescription;
     }
 
@@ -312,14 +327,17 @@ public class Asset extends Observable
     }
 
     public String getRemarks() {
+
         return mRemarks;
     }
 
     public void setRemarks(String mRemarks) {
+
         this.mRemarks = mRemarks;
     }
 
     public String getAcquisitionDate() {
+
         return mAcquisitionDate;
     }
 
@@ -333,8 +351,53 @@ public class Asset extends Observable
     }
 
     //TODO
-    public void approveAsset(Activity anActivity,MyApp anApp){
+    public void approveAsset(Activity anActivity,MyApp anApp, boolean approved){
+        MyApp app = anApp;
+        String ip = app.getHostAddress();
+        String api = MessageConstants.ASSIGNMENTS_API;
+        String message = MessageConstants.ASSIGNMENT_MESSAGE_CAT_PUT_APPROVE_TRANSFER;
+        String remarks;
+        int callType = Request.Method.PUT;
 
+        if (approved){
+            message = MessageConstants.ASSIGNMENT_MESSAGE_CAT_PUT_APPROVE_TRANSFER;
+            remarks = "Approved";
+        }
+        else{
+            message = MessageConstants.ASSIGNMENT_MESSAGE_CAT_PUT_DENY_TRANSFER;
+            remarks = "Denied";
+        }
+
+
+        APIStringRequestFactory request = new APIStringRequestFactory(ip, api, message, callType);
+
+        HashMap<String, String> params = new HashMap<String, String>();
+        try {
+            params.put(Common.PARAM_APPROVING_ID,String.valueOf(app.getSession().getUser().getEmployeeID()));
+            params.put(Common.PARAM_RQSTOR_ID,this.FromID());
+            params.put(Common.PARAM_RCPT_ID,this.ToID());
+            params.put(Common.PARAM_ASSET_ID,String.valueOf(this.getFixedAssetID()));
+            params.put(Common.PARAM_RQR_APPROVAL,"false");
+            params.put(Common.PARAM_CUR_ASSIGN_ID,Integer.toString(this.getAssignmentID()));
+            params.put(Common.PARAM_REMARKS,remarks);
+            params.put(Common.PARAM_TOMIS,"false");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (params.size() == 0) {
+            params = null;
+        }
+
+        Log.d(Common.LOGNAME, "Approval Params -> " + params.toString());
+        request.setParams(params);
+        request.registerCallback(this);
+
+        current_action = Common.PROCESS_APPROVEDENY;
+
+        HttpVolleyRequestSender sender = new HttpVolleyRequestSender(anActivity);
+        sender.sendRequest(request);
     }
 
     //TODO
@@ -351,6 +414,7 @@ public class Asset extends Observable
 
         HashMap<String, String> params = new HashMap<String, String>();
         try {
+
             params.put(Common.PARAM_RQSTOR_ID,String.valueOf(app.getSession().getUser().getEmployeeID()));
             params.put(Common.PARAM_ASSIGN_ID,String.valueOf(this.getAssignmentID()));
             params.put(Common.PARAM_ASSET_ID,String.valueOf(this.getFixedAssetID()));
@@ -456,7 +520,6 @@ public class Asset extends Observable
         this.assetDetail = assetDetail;
     }
 
-
     @Override
     public void onResponse(String response) {
 
@@ -473,6 +536,16 @@ public class Asset extends Observable
                 break;
             case Common.PROCESS_TRANSFER:
                 Log.d(Common.LOGNAME, "Asset Transfer ->" + response);
+                if (response.equals("\"SUCCESSFUL\"")) {
+                    setChanged();
+                    notifyObservers();
+                } else {
+                    setChanged();
+                    notifyObservers(Common.ERROR);
+                }
+                break;
+            case Common.PROCESS_APPROVEDENY:
+                Log.d(Common.LOGNAME,"ApproveDeny ->" + response);
                 if (response.equals("\"SUCCESSFUL\"")) {
                     setChanged();
                     notifyObservers();

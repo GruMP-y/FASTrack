@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,27 +9,27 @@
         <item
             android:id="@+id/nav_item_my_asset"
             android:icon="@drawable/icon_list_accepted"
+            app:actionViewClass ="android.widget.TextView"
             android:title="My Assets" />
 
         <item
             android:id="@+id/nav_item_transactions"
             android:icon="@drawable/icon_list_add"
+            app:actionViewClass ="android.widget.TextView"
             android:title="For Acceptance" />
 
-        <item
-            android:id="@+id/nav_item_asset_transfer"
-            android:icon="@drawable/icon_transfer"
-            android:title="Asset Transfer" />
     </group>
     <group android:id="@+id/grp_mis"
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_items_mis_assets"
             android:icon="@drawable/icon_list_accepted"
+            app:actionViewClass ="android.widget.TextView"
             android:title="MIS Assignments"/>
         <item
             android:id="@+id/nav_items_mis_acceptances"
             android:icon="@drawable/icon_list_add"
+            app:actionViewClass ="android.widget.TextView"
             android:title="MIS For Acceptance"/>
     </group>
     <group android:id="@+id/grp_admin"
@@ -50,6 +51,7 @@
         <item
             android:id="@+id/nav_items_admin_acceptances"
             android:icon="@drawable/icon_list_add"
+            app:actionViewClass ="android.widget.TextView"
             android:title="Accept Releases"/>
     </group>
     <group android:id="@+id/grp_manager"
@@ -57,12 +59,9 @@
         <item
             android:id="@+id/nav_items_mgr_approvals"
             android:icon="@drawable/icon_approvals"
+            app:actionViewClass ="android.widget.TextView"
             android:title="Approvals"/>
-        <item
-            android:id="@+id/nav_items_mgr_transfer"
-            android:icon="@drawable/icon_list_add"
-            android:title="Manager Transfer"/>
-        <item
+       <item
             android:id="@+id/nav_items_mgr_release"
             android:icon="@drawable/icon_list_add"
             android:title="Manager Release"/>

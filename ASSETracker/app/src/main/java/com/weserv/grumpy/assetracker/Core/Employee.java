@@ -1,12 +1,28 @@
 package com.weserv.grumpy.assetracker.Core;
 
+import android.app.Activity;
+import android.util.Log;
+
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.weserv.grumpy.assetracker.RESTHelper.APIJsonObjectRequestFactory;
+import com.weserv.grumpy.assetracker.RESTHelper.HttpVolleyRequestSender;
+import com.weserv.grumpy.assetracker.RESTHelper.JSONObjectResponseCallback;
+import com.weserv.grumpy.assetracker.RESTHelper.MessageConstants;
+import com.weserv.grumpy.assetracker.RESTHelper.RequestResponseCallback;
+import com.weserv.grumpy.assetracker.View.MyApp;
+import com.weserv.grumpy.assetracker.Utils.Common;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Observable;
 
 /**
  * Created by Vans on 9/27/2015.
  */
-public class Employee {
+public class Employee extends Observable
+        implements RequestResponseCallback, JSONObjectResponseCallback {
     private JSONObject employeeDetail;
 
     private int employeeID;
@@ -23,6 +39,8 @@ public class Employee {
     private int positionID;
     private String positionDescription;
     private short status;
+
+    private int current_action;
 
     public Employee() {
     }
@@ -220,6 +238,25 @@ public class Employee {
         this.employeeDetail = employeeDetail;
     }
 
+
+    public void getEmployeeDetailFromWS(Activity anActivity, MyApp anApp,int anEmployeeID){
+        MyApp app = anApp;
+        String ip = app.getHostAddress();
+        String empID = Integer.toString(anEmployeeID);
+        String api = MessageConstants.EMPLOYEES_API;
+        String message = MessageConstants.EMPLOYEES_MESSAGE_CAT_GET_EMPLOYEE_BY_EMPLOYEE_ID;
+        int callType = Request.Method.GET;
+
+        APIJsonObjectRequestFactory request = new APIJsonObjectRequestFactory(ip, api, message, empID, callType);
+
+        request.registerCallback(this);
+
+        HttpVolleyRequestSender sender = new HttpVolleyRequestSender(anActivity);
+        sender.sendRequest(request);
+
+        current_action = Common.PROCESS_LOADING_EMPDETAIL;
+    }
+
     //TODO: Add RequestToWS
 
     @Override
@@ -235,5 +272,35 @@ public class Employee {
         text.append(" ManagerID: " + getManagerID());
 
         return text.toString();
+    }
+
+    @Override
+    public void onResponse(String response) {
+
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+    }
+
+    @Override
+    public void onJSONResponse(JSONObject response) {
+        Log.d(Common.LOGNAME,"Employee -> onJSONResponse" + response.toString());
+        switch (current_action) {
+            case Common.PROCESS_LOADING_EMPDETAIL:
+                this.setEmployeeDetail(response);
+                Log.d(Common.LOGNAME,"Loaded...");
+                break;
+        }
+        setChanged();
+        notifyObservers();
+    }
+
+    @Override
+    public void onJSONErrorResponse(VolleyError error) {
+        Log.d(Common.LOGNAME,"Employee -> onJSONResponseError");
+        setChanged();
+        notifyObservers(Common.ERROR);
     }
 }

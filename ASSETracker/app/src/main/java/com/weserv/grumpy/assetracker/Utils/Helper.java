@@ -22,17 +22,18 @@ public class Helper {
         return Color.parseColor(colors[position]);
     }
 
-    public static void ShowAlertDialog(Context aContext, String aMessage){
+    public static void ShowAlertDialog(Context aContext, String aMessage) {
         AlertDialog dialog = new AlertDialog.Builder(aContext).create();
         dialog.setCancelable(false);
         dialog.setTitle("Fastrack");
         dialog.setMessage(aMessage);
 
-        dialog.setButton("OK",new DialogInterface.OnClickListener() {
+        dialog.setButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
                 arg0.dismiss();
             }
         });
+    }
 
 }

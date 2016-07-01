@@ -5,13 +5,13 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
-import com.weserv.grumpy.assetracker.Core.Connection.APIJsonArrayRequestFactory;
-import com.weserv.grumpy.assetracker.Core.Connection.HttpVolleyRequestSender;
-import com.weserv.grumpy.assetracker.Core.Connection.JSONArrayResponseCallback;
-import com.weserv.grumpy.assetracker.Core.Connection.JSONObjectResponseCallback;
-import com.weserv.grumpy.assetracker.Core.Connection.MessageConstants;
-import com.weserv.grumpy.assetracker.Core.Connection.RequestResponseCallback;
-import com.weserv.grumpy.assetracker.UI.MyApp;
+import com.weserv.grumpy.assetracker.RESTHelper.APIJsonArrayRequestFactory;
+import com.weserv.grumpy.assetracker.RESTHelper.HttpVolleyRequestSender;
+import com.weserv.grumpy.assetracker.RESTHelper.JSONArrayResponseCallback;
+import com.weserv.grumpy.assetracker.RESTHelper.JSONObjectResponseCallback;
+import com.weserv.grumpy.assetracker.RESTHelper.MessageConstants;
+import com.weserv.grumpy.assetracker.RESTHelper.RequestResponseCallback;
+import com.weserv.grumpy.assetracker.View.MyApp;
 import com.weserv.grumpy.assetracker.Utils.Common;
 
 import org.json.JSONArray;
@@ -19,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Vans on 9/27/2015.

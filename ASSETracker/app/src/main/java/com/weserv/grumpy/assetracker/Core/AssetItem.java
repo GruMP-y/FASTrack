@@ -19,6 +19,9 @@ public class AssetItem {
     String assetBrandModel;
     String fromID;
     String toID;
+    int assignmentID;
+    String assetStatus;
+    String assetStatusDesc;
 
     public AssetItem(String assetType, String serialNumber, String anAssetTag, String assignmentStatusDesc, String anAssignmentStatus) {
         this.assetType = assetType;
@@ -34,38 +37,48 @@ public class AssetItem {
             this.assetTag = aJsonAsset.getString(Common.FLD_ASSET_TAG);
             this.assignmentStatus = aJsonAsset.getString(Common.FLD_ASSIGN_STAT_ID);
             this.serialNumber = aJsonAsset.getString(Common.FLD_SERIAL_NO);
+            this.assignmentID = aJsonAsset.getInt(Common.FLD_ASSIGN_ID);
+            this.assetStatus = aJsonAsset.getString(Common.FLD_ASSET_STAT_ID);
+            this.assetStatusDesc = aJsonAsset.getString(Common.FLD_ASSET_STAT_DESC);
 
-            String modelBrand = aJsonAsset.getString(Common.FLD_MODEL) + " " + aJsonAsset.getString(Common.FLD_BRAND);
+            String modelBrand = aJsonAsset.getString(Common.FLD_BRAND) + " " + aJsonAsset.getString(Common.FLD_MODEL);
 
             this.assetBrandModel = modelBrand;
         }
         catch(JSONException ex){
-
+            Log.d(Common.LOGNAME, ex.toString());
         }
 
     }
 
     public String getAssetType() {
+
         return assetType;
     }
 
     public void setAssetType(String assetType) {
+
         this.assetType = assetType;
     }
 
     public String getSerialNumber() {
+
         return serialNumber;
     }
 
     public void setSerialNumber(String serialNumber) {
+
         this.serialNumber = serialNumber;
     }
 
-    public void setAssetTag(String anAssetTag) { this.assetTag = anAssetTag; }
+    public void setAssetTag(String anAssetTag) {
+        this.assetTag = anAssetTag; }
 
-    public String getAssetTag() { return assetTag;}
+    public String getAssetTag() {
+        return assetTag;}
 
     public String getAssignmentStatusDesc() {
+
         return assignmentStatusDesc;
     }
 
@@ -73,17 +86,34 @@ public class AssetItem {
         this.assignmentStatusDesc = assignmentStatusDesc;
     }
 
-    public String getAssignmentStatus() { return assignmentStatus;}
+    public String getAssignmentStatus() {
+
+        return assignmentStatus;
+    }
 
     public void setAssignmentStatus(String anAssignmentStatus){
         this.assignmentStatus = anAssignmentStatus;
     }
 
     public String getAssetBrandModel() {
+
         return assetBrandModel;
     }
 
     public void setAssetBrandModel(String aModelBrand){
+
         this.assetBrandModel = aModelBrand;
     }
+
+    public int getAssignmentID() {
+        return assignmentID;}
+
+    public String getAssetStatus(){
+        return assetStatus;
+    }
+
+    public String getAssetStatusDescription(){
+        return assetStatusDesc;
+    }
+
 }

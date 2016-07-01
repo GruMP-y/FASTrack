@@ -23,6 +23,7 @@ public class Common {
     public final static int PROCESS_TRANSFER_ACTIVE=12;
     public final static int PROCESS_NO_CNXN =13;
     public final static int PROCESS_RELEASE=14;
+    public final static int PROCESS_APPROVEDENY =15;
 
     public final static String FLD_ASSIGN_ID="AssetAssignmentID";
     public final static String FLD_EMP_ID="EmployeeID";
@@ -52,6 +53,7 @@ public class Common {
     public final static String FLD_ACCESS_LVL="AccessLevel";
     public final static String FLD_RCPT_EMP_ID="ReceipientEmpID";
     public final static String FLD_ASSIGNING_EMP_ID="AssigningEmpID";
+    public final static String FLD_ASSIGN_REMARKS="AssignmentRemarks";
 
     public final static String PARAM_ACCEPTING_EMP_ID="acceptingEmployeeID";
     public final static String PARAM_ACCEPTED="accepted";
@@ -80,6 +82,25 @@ public class Common {
     public final static int SRC_ADMINACCEPTANCES = 6;
     public final static int SRC_ADMINAPPROVALS = 7;
     public final static int SRC_MGRAPPROVALS = 8;
+
+    public final static String ASSIGN_STATUS_WTG_APPROVAL = "1";
+    public final static String ASSIGN_STATUS_WTG_ACCEPTANCE = "2";
+    public final static String ASSIGN_STATUS_ACCEPTED = "3";
+    public final static String ASSIGN_STATUS_FORTRANSFER = "4";
+    public final static String ASSIGN_STATUS_REJECTED = "5";
+    public final static String ASSIGN_STATUS_RELEASED = "6";
+
+    public final static String ASSET_STATUS_NEW="1";
+    public final static String ASSET_STATUS_FORASSIGN="2";
+    public final static String ASSET_STATUS_ASSIGNEDMIS="3";
+    public final static String ASSET_STATUS_ASSIGNED="4";
+    public final static String ASSET_STATUS_DECOMMISSIONED="5";
+    public final static String ASSET_STATUS_FORTRANSFER="6";
+    public final static String ASSET_STATUS_FORRELEASE="7";
+    public final static String ASSET_STATUS_FORREPAIR="8";
+    public final static String ASSET_STATUS_RELEASED="9";
+
+
 
     public final static int RSPNS_CD_GET_ASSET_TAG = 2;
 

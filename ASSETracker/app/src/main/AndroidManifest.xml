@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.weserv.grumpy.assetracker" >
+    package="com.weserv.grumpy.assetracker">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".UI.MyApp"
+        android:name=".View.MyApp"
         android:allowBackup="true"
         android:icon="@drawable/drawable_app_icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".UI.Login"
+            android:name=".View.Login"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,95 +22,105 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.ForgotPassword"
+            android:name=".View.ForgotPasswordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_password_reset"
-            android:parentActivityName=".UI.Login"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.Login"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.Login" />
+                android:value=".View.Login" />
         </activity>
         <activity
-            android:name=".UI.Register"
+            android:name=".View.RegisterActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".UI.Login"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.Login"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.Login" />
+                android:value=".View.Login" />
         </activity>
         <activity
-            android:name=".UI.Preference"
+            android:name=".View.PreferenceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_setting"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".UI.MainScreenActivity"
+            android:name=".View.MainScreenActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_main_screen"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UI.ChangePasswordActivity"
+            android:name=".View.ChangePasswordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_change_password"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.MainScreenActivity" />
+                android:value=".View.MainScreenActivity" />
         </activity>
         <activity
-            android:name=".UI.AssetRegistrationActivity"
+            android:name=".View.AssetRegistrationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_asset_registration"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.MainScreenActivity" />
+                android:value=".View.MainScreenActivity" />
         </activity>
         <activity
-            android:name=".UI.TransferAssetActivity"
+            android:name=".View.TransferAssetActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_transfer_asset"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.MainScreenActivity" />
+                android:value=".View.MainScreenActivity" />
         </activity>
         <activity
-            android:name=".UI.AssetAssignmentActivity"
+            android:name=".View.AssetAssignmentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_asset_assignment"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.MainScreenActivity" />
+                android:value=".View.MainScreenActivity" />
         </activity>
         <activity
-            android:name=".UI.GetAssetTagActivity"
+            android:name=".View.GetAssetTagActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_get_asset_tag"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.MainScreenActivity" />
+                android:value=".View.MainScreenActivity" />
         </activity>
         <activity
-            android:name=".UI.ManageAssetActivity"
+            android:name=".View.ManageAssetActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_manage_asset"
-            android:parentActivityName=".UI.MainScreenActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.weserv.grumpy.assetracker.UI.MainScreenActivity" />
+                android:value="com.weserv.grumpy.assetracker.View.MainScreenActivity" />
+        </activity>
+        <activity
+            android:name=".View.ApprovalsActivity"
+            android:label="@string/title_activity_approvals"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".View.MainScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.weserv.grumpy.assetracker.View.MainScreenActivity" />
+
         </activity>
     </application>
 

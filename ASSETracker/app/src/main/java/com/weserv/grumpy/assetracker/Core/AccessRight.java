@@ -2,12 +2,6 @@ package com.weserv.grumpy.assetracker.Core;
 
 import android.util.Log;
 
-import com.android.volley.Request;
-import com.android.volley.VolleyError;
-import com.weserv.grumpy.assetracker.Core.Connection.APIJsonArrayRequestFactory;
-import com.weserv.grumpy.assetracker.Core.Connection.HttpVolleyRequestSender;
-import com.weserv.grumpy.assetracker.Core.Connection.JSONArrayResponseCallback;
-import com.weserv.grumpy.assetracker.Core.Connection.MessageConstants;
 import com.weserv.grumpy.assetracker.Utils.Common;
 
 import org.json.JSONArray;
