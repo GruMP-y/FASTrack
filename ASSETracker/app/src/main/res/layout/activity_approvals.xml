@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.weserv.grumpy.assetracker.View.ApprovalsActivity">
+
+    <!-- The ActionBar displayed at the top -->
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_approval_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_approvalfrm_request_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Request Type"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
+
+                    <TextView
+                        android:id="@+id/label_approval_request_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_approval_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_approvalfrm_requestor"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Request By"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Employee Name" />
+
+                    <TextView
+                        android:id="@+id/label_approval_requestor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Department" />
+
+                    <TextView
+                        android:id="@+id/label_approval_requestor_dept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Email Address" />
+
+                    <TextView
+                        android:id="@+id/label_approval_requestor_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_approval_asset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_approvalfrm_asset"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Asset Detail"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Asset Tag" />
+
+                    <TextView
+                        android:id="@+id/label_approval_asset_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Serial Number" />
+
+                    <TextView
+                        android:id="@+id/label_approval_asset_serial_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Asset Type" />
+
+                    <TextView
+                        android:id="@+id/label_approval_asset_asset_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Brand and Model" />
+
+                    <TextView
+                        android:id="@+id/label_approval_asset_brandmodel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_approval_receipient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_approvalfrm_receipient"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Recipient"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Employee Name" />
+
+                    <TextView
+                        android:id="@+id/label_approval_receipient_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Department" />
+
+                    <TextView
+                        android:id="@+id/label_approval_receipient_dept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:text="Email Address" />
+
+                    <TextView
+                        android:id="@+id/label_approval_receipient_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_approval_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/button_left_right_padding"
+                android:paddingRight="@dimen/button_left_right_padding"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_approvalfrm_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        android:text="Request Reason"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:background="@color/primary_light"/>
+
+                    <TextView
+                        android:id="@+id/label_approval_reason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_view_instruction_margin"
+                        android:layout_marginRight="@dimen/text_view_instruction_margin"
+                        android:textSize="@dimen/abc_text_size_medium_material"
+                        />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                <Button
+                    android:id="@+id/button_approve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingLeft="@dimen/button_left_right_padding"
+                    android:paddingRight="@dimen/button_left_right_padding"
+                    style="@style/CustomRaisedButton"
+                    android:layout_margin="@dimen/button_margin"
+                    android:layout_alignParentRight="true"
+                    android:text="Approve" />
+
+                <Button
+                    android:id="@+id/button_deny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingLeft="@dimen/button_left_right_padding"
+                    android:paddingRight="@dimen/button_left_right_padding"
+                    style="@style/CustomRaisedButton"
+                    android:layout_margin="@dimen/button_margin"
+                    android:layout_toLeftOf="@id/button_approve"
+                    android:text="Deny" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
